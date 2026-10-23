@@ -1,5 +1,45 @@
 package com.sena.controller;
 
+import com.sena.controllabs.dto.RoomCreateRequest;
+import com.sena.controllabs.dto.RoomResponse;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+// El prefijo /api/v1 se configura globalmente en application.properties (spring.mvc.servlet.path=/api/v1)
+@RequestMapping("/rooms")
 public interface RoomControllerApi {
 
+    // 1. GET Listar Aulas con Query Param opcional (?block=A)
+     //http://localhost:8080/api/v1/rooms/
+    //http://localhost:8080/api/v1/rooms/?block=FONTIBON
+    @GetMapping
+    ResponseEntity<List<RoomResponse>> getAllRooms(
+            @RequestParam(required = false) String block
+    );
+    
+
+
+    // 2. GET Obtener Aula por ID de Path Variable
+    //http://localhost:8080/api/v1/rooms/1
+    @GetMapping("/{id}")
+    ResponseEntity<RoomResponse> getRoomById(@PathVariable Long id);
+
+
+
+    // 3. POST Crear Aula recibiendo DTO en Request Body
+
+    //http://localhost:8080/api/v1/rooms/
+
+    @PostMapping
+    ResponseEntity<RoomResponse> createRoom(
+            @Valid @RequestBody RoomCreateRequest request
+    );
+
+    // 4. DELETE Eliminar Aula por ID
+    //http://localhost:8080/api/v1/rooms/3
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> deleteRoom(@PathVariable Long id);
 }

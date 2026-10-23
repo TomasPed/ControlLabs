@@ -9,7 +9,5 @@ public record RoomResponse(
         String locationBlock,
         String status,
         LocalDateTime createdAt
-) {
-    
-}
+) {}
 
