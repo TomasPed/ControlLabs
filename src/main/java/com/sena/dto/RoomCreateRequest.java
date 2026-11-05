@@ -17,4 +17,4 @@ public record RoomCreateRequest(
 
         @NotBlank(message = "El bloque de ubicación es obligatorio")
         String locationBlock
-)
+){}
