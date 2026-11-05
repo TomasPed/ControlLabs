@@ -1,4 +1,4 @@
-package com.sena.dto;
+package com.sena.controllabs.dto;
 import java.time.LocalDateTime;
 
 public record RoomResponse(

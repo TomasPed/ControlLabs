@@ -1,10 +1,13 @@
-package com.sena.controller;
+package com.sena.controllabs.controller;
+
+
+import jakarta.validation.Valid;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import com.sena.controllabs.dto.RoomCreateRequest;
 import com.sena.controllabs.dto.RoomResponse;
-import jakarta.validation.Valid;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 

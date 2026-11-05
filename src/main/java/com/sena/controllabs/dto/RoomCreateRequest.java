@@ -1,4 +1,4 @@
-package com.sena.dto;
+package com.sena.controllabs.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
